@@ -141,7 +141,7 @@ function App() {
           
       }
       
-  },500);
+  },400);
 
   useEffect(() => {
     const debouncedScroll = debounce(handleInfiniteScroll, 500);
