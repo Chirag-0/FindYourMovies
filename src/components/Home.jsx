@@ -1,6 +1,6 @@
-import MoviesSearch from "../MoviesSearch";
+import MoviesSearch from "./MoviesSearch";
 import FiltersSection from "./FiltersSection";
-import MovieList from "../MovieList";
+import MovieList from "./MovieList";
 import Loader from "./Loader";
 import Error from "./Error";
 

@@ -11,7 +11,10 @@ function MovieList({ movies, onMovieSelect, selectedMovie }) {
             src={`${import.meta.env.VITE_IMAGE_BASE_URL}${movie.poster_path}`}
             alt={movie.title}
             onError={(e) => {
-              e.target.src = 'placeholder-image.jpg';
+              if (!e.target.dataset.errorHandled) { // Prevent infinite loop
+                e.target.dataset.errorHandled = true;
+                e.target.src = 'placeholder-image.jpg'; // Set valid fallback image
+              }
             }}
           />
           <h3>{movie.title}</h3>
