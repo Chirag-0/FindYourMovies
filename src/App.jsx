@@ -49,7 +49,6 @@ function App() {
   }, []);
    
   const fetchMovies = async (signal) => {
-    const controller = new AbortController();
    
     try {
       setIsLoading(true);
@@ -69,7 +68,7 @@ function App() {
 
           if(params.length) url += `&${params.join('&')}`; 
       }
-      const response = await fetch(url, { signal:controller.signal } );
+      const response = await fetch(url, { signal } );
 
       if (!response.ok) throw new Error(`HTTP ${response.status} Error`);
 
